@@ -3,15 +3,24 @@ class Factorial
 {
 	public static void main(String args[])
 	{
-		int i,fact=1,number;
+		int number;
+		long fact;
 		Scanner input=new Scanner(System.in);
-		System.out.println("Enetr the value");
+		System.out.println("Enter the value");
 		number=Integer.parseInt(input.next());
-		for(i=1;i<=number;i++)
+		fact=multiplynum(number);
+		System.out.println("Factorial of " + number + " is :" + fact);
+	}
+	public static long multiplynum(int num)
+
+	{
+		if (num>=1)
 		{
-			fact=fact*i;
-		}
-		System.out.println("FActorial of " + number + " is :" + fact);
+			return num*multiplynum(num -1);
+}
+else
+{ return 1;
+}
 	}
 }
 
